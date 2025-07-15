@@ -48,6 +48,9 @@ type level = [ `LOG_EMERG | `LOG_ALERT | `LOG_CRIT | `LOG_ERR | `LOG_WARNING
 (** the type of a syslog connection *)
 type t
 
+(** exception that may be raised by the functions below *)
+exception Syslog_error of string
+
 (** given a string descibing a facility, return the facility. The
     strings consist of the name of the facility with the LOG_ chopped
     off. They are not case sensitive.
